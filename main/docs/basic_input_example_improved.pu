@@ -1,0 +1,77 @@
+@startuml
+start
+partition "Get Name"{
+#lightblue:display a message asking user
+to 'Please enter a first name:' and assign
+the input to a 'first_name' variable;
+note left
+    Note that all input gotten from the
+    **input()** method is of type 'str' initally.
+end note
+}
+partition #lightgray "Get Rent"{
+partition "Get Rent1 and cast to  int"{
+#lightcyan:display a message asking user
+to 'Please enter rent for month one:' and assign
+the input to a month_one variable;
+#lightpink:if you didn't do this in the previous
+line of code, cast month_one to an 'int' and store
+it as a variable like 'month_one_int';
+note left
+    Hint: last weeks homework we cast a
+    variable to an integer; refer to that
+    code if you are stuck
+end note
+}
+partition "Get Rent2 and cast to  int"{
+note
+    Hint: this is what we call a 'code smell'
+    where you feel like you are copy/pasting
+    some code with minor tweaks. We will
+    discuss Methods/Functions soon that will
+    help ease and/or organize this.
+end note
+#lightcyan:display a message asking user
+to 'Please enter a rent for month two:' and assign
+the input to a month_two variable;
+#lightpink:if you didn't do this in the previous
+line of code, cast month_two to an 'int' and store
+it as a variable like 'month_two_int';
+}
+partition "Get Rent3 and cast to  int"{
+#lightcyan:display a message asking user
+to 'Please enter a rent for month three:' and assign
+the input to a month_three variable;
+#lightpink:if you didn't do this in the previous
+line of code, cast month_three to an 'int' and store
+it as a variable like 'month_three_int';
+}
+partition "Get Rent4 and cast to  int"{
+#lightcyan:display a message asking user
+to 'Please enter a rent for month four:' and assign
+the input to a month_four variable;
+#lightpink:if you didn't do this in the previous
+line of code, cast month_four to an 'int' and store
+it as a variable like 'month_four_int';
+}
+}
+partition "Do Math"{
+    partition "Get Max"{
+        #green:use max() function to get the max rent
+        and store as a variable like 'max_rent';
+    }
+    note left
+        Hint: You can google for 'Python Max() Function' for details
+        on how this works
+    end note
+    partition "Inflation"{
+        #skyblue:use max_rent and add 3% to it and
+        store as a variable like 'max_with_inflation';
+    }
+}
+partition "Print/Format output"{
+    #orange:print "{first_name}, your max rent
+    with inflation for next year is ${max_with_inflation}";
+}
+end
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+start
+partition "Get Name"{
+#lightblue:ask user for **input** and
+store their **first_name**;
+}
+partition "Get Rent"{
+#lightcyan:Ask user for rent 4 times, storing the rent;
+}
+partition "Do Math"{
+    #lightgreen: determine max rent from 4 values;
+    #lightcoral: add 3% for inflation;
+}
+partition "Print/Format output"{
+#orange:print your formatted output;
+}
+@enduml
